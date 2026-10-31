@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PakStudyfy - Free Notes, Past Papers & MCQs</title>
+<meta name="description" content="Free PDF notes, past papers, guess papers, solved MCQs and syllabus for 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS and NTS.">
+<style>
+:root{--green:#16a34a;--green-dark:#15803d;--bg:#f6f8f6;--card:#fff;--text:#1f2937;--muted:#6b7280;--wa:#25d366;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;display:flex;flex-direction:column;min-height:100vh}
+a{color:inherit;text-decoration:none}
+header{background:var(--green-dark);color:#fff;padding:14px 16px;position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:1.5rem;font-weight:800}
+.logo span{color:#bbf7d0}
+.nav-link{font-size:.9rem;font-weight:600}
+main{flex:1;width:100%;max-width:1100px;margin:auto;padding:20px 16px}
+.hero{text-align:center;padding:30px 0 10px}
+.hero h1{font-size:2rem;margin-bottom:6px}
+.hero p{color:var(--muted);margin-bottom:20px}
+.search{display:flex;max-width:640px;margin:0 auto;box-shadow:0 2px 10px rgba(0,0,0,.08);border-radius:12px;overflow:hidden;background:#fff}
+.search input{flex:1;border:0;padding:16px;font-size:1rem;outline:none;min-width:0}
+.search button{background:var(--green);color:#fff;border:0;padding:0 22px;font-size:1rem;font-weight:600;cursor:pointer}
+.search button:hover{background:var(--green-dark)}
+.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:28px 0}
+.class-btn{background:#fff;border:2px solid var(--green);border-radius:14px;padding:22px 10px;text-align:center;font-size:1.1rem;font-weight:700;color:var(--green-dark);transition:.15s}
+.class-btn:hover{background:var(--green);color:#fff}
+h1{font-size:1.6rem}
+h2{font-size:1.3rem;margin:26px 0 12px}
+.card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:12px}
+.doc{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.doc-info{flex:1;min-width:200px}
+.doc-title{font-weight:600}
+.doc-meta{font-size:.85rem;color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:8px;padding:9px 14px;font-weight:600;font-size:.9rem;color:#fff}
+.btn-download{background:var(--green)}
+.btn-download:hover{background:var(--green-dark)}
+.btn-wa{background:var(--wa)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tab{padding:8px 14px;border-radius:20px;background:#e5e7eb;font-size:.9rem}
+.tab:hover{background:var(--green);color:#fff}
+.sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.section-card{background:#fff;border-left:5px solid var(--green);padding:18px;border-radius:12px;font-weight:700;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.section-card:hover{color:var(--green-dark)}
+.section-card small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+.crumb{font-size:.9rem;color:var(--muted);margin-bottom:10px}
+.crumb a{color:var(--green-dark);font-weight:600}
+.empty{color:var(--muted);padding:20px;text-align:center;background:#fff;border-radius:12px}
+.empty a{color:var(--green-dark);font-weight:600}
+.page{background:#fff;padding:24px;border-radius:12px;line-height:1.7}
+.page h1{margin-bottom:12px}
+.page p{margin-bottom:10px}
+.page a{color:var(--green-dark);font-weight:600}
+footer{background:#111827;color:#d1d5db;padding:24px 16px;margin-top:30px}
+.foot{max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.foot nav{display:flex;flex-wrap:wrap;gap:14px}
+.foot a:hover{color:#fff}
+.copy{text-align:center;font-size:.85rem;margin-top:16px;color:#9ca3af}
+@media(max-width:600px){
+  .hero h1{font-size:1.5rem}
+  .search button{padding:0 14px}
+  .search input{padding:14px 10px}
+  .doc-info{min-width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#home" class="logo">Pak<span>Studyfy</span></a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="foot">
+    <div><strong>PakStudyfy</strong><br>Free notes, past papers and MCQs for Pakistani students.</div>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#disclaimer">Disclaimer</a>
+    </nav>
+  </div>
+  <div class="copy">&copy; <span id="year"></span> PakStudyfy. All rights reserved.</div>
+</footer>
+
+<script>
+/* ==================== SETTINGS ==================== */
+const SITE_URL = "https://www.pakstudyfy.com"; // change to your real domain
+const WHATSAPP = "923198778793";
+
+const CLASSES = [
+  {id:"9th",   label:"9th"},
+  {id:"10th",  label:"10th"},
+  {id:"11th",  label:"11th"},
+  {id:"12th",  label:"12th"},
+  {id:"mdcat", label:"MDCAT"},
+  {id:"ppsc",  label:"PPSC / FPS / NTS"}
+];
+
+const SUBJECTS = {
+  "9th":   ["Math","Biology","Chemistry","Physics","English","Urdu","Computer"],
+  "10th":  ["Math","Biology","Chemistry","Physics","English","Urdu","Islamiyat","Pak Studies","Computer"],
+  "11th":  ["Math","Biology","Chemistry","Physics","English","Computer"],
+  "12th":  ["Math","Biology","Chemistry","Physics","English","Computer"],
+  "mdcat": ["Biology","Chemistry","Physics","English","Logical Reasoning"],
+  "ppsc":  ["General Knowledge","Current Affairs","English","Pak Studies","Math","Islamiyat"]
+};
+
+const SECTIONS = [
+  {id:"notes",    label:"Notes",                   desc:"Chapter-wise"},
+  {id:"past",     label:"Past Papers",             desc:"Last 5 years"},
+  {id:"guess",    label:"Guess Papers",            desc:"Important questions"},
+  {id:"test",     label:"Test Papers",             desc:"Daily tests"},
+  {id:"mcq",      label:"Solved MCQs",             desc:"With answers"},
+  {id:"syllabus", label:"Pairing Scheme / Syllabus", desc:"Latest scheme"}
+];
+
+/* ==================== YOUR PDFs ====================
+   Add one line per PDF. Replace url with your Google Drive / hosted PDF link.
+   cls: 9th | 10th | 11th | 12th | mdcat | ppsc
+   section: notes | past | guess | test | mcq | syllabus
+   date: YYYY-MM-DD (controls "Latest Uploads" order)
+*/
+const DOCS = [
+  {title:"Chapter 1 - Motion Notes",         cls:"9th",   subject:"Physics",   section:"notes",    url:"#", date:"2026-10-28"},
+  {title:"Chapter 2 - Cell Structure Notes", cls:"9th",   subject:"Biology",   section:"notes",    url:"#", date:"2026-10-27"},
+  {title:"Math Guess Paper 2026",            cls:"10th",  subject:"Math",      section:"guess",    url:"#", date:"2026-10-26"},
+  {title:"Biology Past Papers 2025",         cls:"mdcat", subject:"Biology",   section:"past",     url:"#", date:"2026-10-25"},
+  {title:"Chemistry Solved MCQs - Chapter 1",cls:"11th",  subject:"Chemistry", section:"mcq",      url:"#", date:"2026-10-24"},
+  {title:"Pak Studies Syllabus 2026",        cls:"ppsc",  subject:"Pak Studies",section:"syllabus",url:"#", date:"2026-10-23"}
+];
+
+/* ==================== STATIC PAGES ==================== */
+const PAGES = {
+  about: {
+    title: "About Us",
+    body: `<p>PakStudyfy is a free study platform that helps Pakistani students find notes, past papers, guess papers, solved MCQs and syllabus for 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS and NTS.</p>
+           <p>PakStudyfy was founded by <strong>Muhammad Jaffar</strong>. Our goal is simple: make quality study material free and easy to find on any phone.</p>`
+  },
+  contact: {
+    title: "Contact Us",
+    body: `<p>For questions, feedback or content requests, reach us on WhatsApp:</p>
+           <p><a href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener"><strong>+92 319 8778793</strong></a></p>`
+  },
+  privacy: {
+    title: "Privacy Policy",
+    body: `<p>PakStudyfy does not require login and does not ask for personal account information.</p>
+           <p>We may use cookies and third-party services such as Google AdSense and Google Analytics. These services may use cookies to show ads based on your previous visits to this and other websites. You can opt out of personalized advertising at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">google.com/settings/ads</a>.</p>
+           <p>For privacy questions, contact us on WhatsApp at +92 319 8778793.</p>
+           <!-- Replace this text with your full text from a Privacy Policy Generator before applying for AdSense -->`
+  },
+  disclaimer: {
+    title: "Disclaimer",
+    body: `<p>PakStudyfy does not own all the notes, past papers and other materials shared on this website. Materials are shared for educational purposes only.</p>
+           <p>If you are a copyright owner and want any content removed, contact us on WhatsApp at +92 319 8778793 and we will remove it promptly.</p>
+           <p>Content is provided as is. PakStudyfy is not responsible for exam results or decisions made based on these materials.</p>`
+  }
+};
+
+/* ==================== HELPERS ==================== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const classLabel = id => (CLASSES.find(c => c.id === id) || {}).label || id;
+const sectionLabel = id => (SECTIONS.find(s => s.id === id) || {}).label || id;
+const newestFirst = list => [...list].sort((a, b) => b.date.localeCompare(a.date));
+
+function docCard(d) {
+  const shareText = `${d.title} - Free download on PakStudyfy: ${SITE_URL}`;
+  const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  return `
+    <div class="card doc">
+      <div class="doc-info">
+        <div class="doc-title">${esc(d.title)}</div>
+        <div class="doc-meta">${esc(classLabel(d.cls))} &bull; ${esc(d.subject)} &bull; ${esc(sectionLabel(d.section))} &bull; ${esc(d.date)}</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-download" href="${esc(d.url)}" target="_blank" rel="noopener">&#11015; Download</a>
+        <a class="btn btn-wa" href="${waLink}" target="_blank" rel="noopener">WhatsApp Share</a>
+      </div>
+    </div>`;
+}
+
+function docList(items, emptyText = "No files uploaded yet. Check back soon!") {
+  return items.length ? items.map(docCard).join("") : `<div class="empty">${emptyText}</div>`;
+}
+
+function onSearch(e) {
+  e.preventDefault();
+  const q = e.target.q.value.trim();
+  if (q) location.hash = "search/" + encodeURIComponent(q);
+}
+
+/* ==================== VIEWS ==================== */
+function viewHome() {
+  return `
+    <section class="hero">
+      <h1>Free Notes, Past Papers &amp; MCQs</h1>
+      <p>For 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS &amp; NTS</p>
+      <form class="search" onsubmit="onSearch(event)">
+        <input name="q" placeholder="Search 9th, 10th, MDCAT Notes..." aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <div class="classes">
+      ${CLASSES.map(c => `<a class="class-btn" href="#class/${c.id}">${esc(c.label)}</a>`).join("")}
+    </div>
+
+    <h2>Latest Uploads</h2>
+    ${docList(newestFirst(DOCS).slice(0, 10))}`;
+}
+
+function viewClass(id) {
+  if (!CLASSES.find(c => c.id === id)) return viewNotFound();
+  return `
+    <div class="crumb"><a href="#home">Home</a> / ${esc(classLabel(id))}</div>
+    <h1>${esc(classLabel(id))}</h1>
+
+    <h2>Choose a Section</h2>
+    <div class="sections">
+      ${SECTIONS.map(s => `
+        <a class="section-card" href="#class/${id}/${s.id}">
+          ${esc(s.label)}
+          <small>${esc(s.desc)}</small>
+        </a>`).join("")}
+    </div>
+
+    <h2>Subjects</h2>
+    <div class="tabs">
+      ${SUBJECTS[id].map(s => `<a class="tab" href="#search/${encodeURIComponent(s)}">${esc(s)}</a>`).join("")}
+    </div>`;
+}
+
+function viewSection(id, sec) {
+  const s = SECTIONS.find(x => x.id === sec);
+  if (!s || !CLASSES.find(c => c.id === id)) return viewClass(id);
+  const items = newestFirst(DOCS.filter(d => d.cls === id && d.section === sec));
+  return `
+    <div class="crumb"><a href="#home">Home</a> / <a href="#class/${id}">${esc(classLabel(id))}</a> / ${esc(s.label)}</div>
+    <h1>${esc(classLabel(id))} - ${esc(s.label)}</h1>
+    <p style="color:var(--muted);margin:6px 0 16px">${esc(s.desc)}</p>
+    ${docList(items, `No ${esc(s.label)} uploaded yet for ${esc(classLabel(id))}. Check back soon!`)}`;
+}
+
+function viewSearch(q) {
+  const term = q.toLowerCase();
+  const items = newestFirst(DOCS.filter(d =>
+    [d.title, d.subject, classLabel(d.cls), sectionLabel(d.section)].join(" ").toLowerCase().includes(term)
+  ));
+  return `
+    <div class="crumb"><a href="#home">Home</a> / Search</div>
+    <h1>Results for "${esc(q)}"</h1>
+    ${docList(items, "No results found. Try another keyword like Math or 10th.")}`;
+}
+
+function viewNotFound() {
+  return `<div class="empty">Page not found. <a href="#home">Go to Home</a></div>`;
+}
+
+/* ==================== ROUTER ==================== */
+function render() {
+  const [page, a, b] = (location.hash.slice(1) || "home").split("/").map(p => decodeURIComponent(p));
+  let html;
+
+  if (page === "home")        html = viewHome();
+  else if (page === "class")  html = b ? viewSection(a, b) : viewClass(a);
+  else if (page === "search") html = viewSearch(a || "");
+  else if (PAGES[page])       html = `<div class="page"><h1>${PAGES[page].title}</h1>${PAGES[page].body}</div>`;
+  else                        html = viewNotFound();
+
+  $("#app").innerHTML = html;
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener("hashchange", render);
+$("#year").textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
