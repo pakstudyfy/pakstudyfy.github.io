@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PakStudyfy - Free Notes, Past Papers & MCQs</title>
-<meta name="description" content="Free PDF notes, past papers, guess papers, solved MCQs and syllabus for 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS and NTS.">
+<title>PakStudyfy - Free Notes, Past Papers, Guess Papers & MCQs</title>
+<meta name="description" content="Free chapter-wise notes, guess papers, past papers and MCQs for 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS and NTS.">
 <style>
 :root{--green:#16a34a;--green-dark:#15803d;--bg:#f6f8f6;--card:#fff;--text:#1f2937;--muted:#6b7280;--wa:#25d366;}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -14,7 +14,7 @@ header{background:var(--green-dark);color:#fff;padding:14px 16px;position:sticky
 .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{font-size:1.5rem;font-weight:800}
 .logo span{color:#bbf7d0}
-.nav-link{font-size:.9rem;font-weight:600}
+.nav-links{display:flex;gap:16px;font-size:.9rem;font-weight:600;flex-wrap:wrap}
 main{flex:1;width:100%;max-width:1100px;margin:auto;padding:20px 16px}
 .hero{text-align:center;padding:30px 0 10px}
 .hero h1{font-size:2rem;margin-bottom:6px}
@@ -23,9 +23,12 @@ main{flex:1;width:100%;max-width:1100px;margin:auto;padding:20px 16px}
 .search input{flex:1;border:0;padding:16px;font-size:1rem;outline:none;min-width:0}
 .search button{background:var(--green);color:#fff;border:0;padding:0 22px;font-size:1rem;font-weight:600;cursor:pointer}
 .search button:hover{background:var(--green-dark)}
-.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:28px 0}
-.class-btn{background:#fff;border:2px solid var(--green);border-radius:14px;padding:22px 10px;text-align:center;font-size:1.1rem;font-weight:700;color:var(--green-dark);transition:.15s}
-.class-btn:hover{background:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:24px 0}
+.tile{background:#fff;border:2px solid var(--green);border-radius:14px;padding:20px 10px;text-align:center;font-size:1.05rem;font-weight:700;color:var(--green-dark);transition:.15s}
+.tile:hover{background:var(--green);color:#fff}
+.tile small{display:block;font-weight:400;color:var(--muted);font-size:.8rem;margin-top:4px}
+.tile:hover small{color:#dcfce7}
+.tile-solid{border-left:5px solid var(--green);border-radius:12px;padding:18px;text-align:left}
 h1{font-size:1.6rem}
 h2{font-size:1.3rem;margin:26px 0 12px}
 .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:12px}
@@ -34,17 +37,11 @@ h2{font-size:1.3rem;margin:26px 0 12px}
 .doc-title{font-weight:600}
 .doc-meta{font-size:.85rem;color:var(--muted)}
 .actions{display:flex;gap:8px;flex-wrap:wrap}
-.btn{display:inline-block;border-radius:8px;padding:9px 14px;font-weight:600;font-size:.9rem;color:#fff}
+.btn{display:inline-block;border-radius:8px;padding:9px 14px;font-weight:600;font-size:.9rem;color:#fff;border:0;cursor:pointer}
 .btn-download{background:var(--green)}
 .btn-download:hover{background:var(--green-dark)}
 .btn-wa{background:var(--wa)}
-.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.tab{padding:8px 14px;border-radius:20px;background:#e5e7eb;font-size:.9rem}
-.tab:hover{background:var(--green);color:#fff}
-.sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-.section-card{background:#fff;border-left:5px solid var(--green);padding:18px;border-radius:12px;font-weight:700;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.section-card:hover{color:var(--green-dark)}
-.section-card small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+.btn-soon{background:#9ca3af;cursor:default}
 .crumb{font-size:.9rem;color:var(--muted);margin-bottom:10px}
 .crumb a{color:var(--green-dark);font-weight:600}
 .empty{color:var(--muted);padding:20px;text-align:center;background:#fff;border-radius:12px}
@@ -53,6 +50,12 @@ h2{font-size:1.3rem;margin:26px 0 12px}
 .page h1{margin-bottom:12px}
 .page p{margin-bottom:10px}
 .page a{color:var(--green-dark);font-weight:600}
+.founder{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid var(--green);display:block;margin:0 auto 14px}
+.wa-big{display:inline-block;background:var(--wa);color:#fff;padding:14px 22px;border-radius:10px;font-weight:700;margin-top:8px}
+.notice{border-left:5px solid #f59e0b}
+.notice .doc-meta{margin-top:4px}
+.search-box{width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:10px;font-size:1rem;margin:10px 0 6px}
+.course-cat{display:inline-block;background:#dcfce7;color:var(--green-dark);font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:12px;margin-bottom:6px}
 footer{background:#111827;color:#d1d5db;padding:24px 16px;margin-top:30px}
 .foot{max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
 .foot nav{display:flex;flex-wrap:wrap;gap:14px}
@@ -71,7 +74,11 @@ footer{background:#111827;color:#d1d5db;padding:24px 16px;margin-top:30px}
 <header>
   <div class="nav">
     <a href="#home" class="logo">Pak<span>Studyfy</span></a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <div class="nav-links">
+      <a href="#notices">Notice Board</a>
+      <a href="#skills">Skills &amp; Earn</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </header>
 
@@ -79,7 +86,7 @@ footer{background:#111827;color:#d1d5db;padding:24px 16px;margin-top:30px}
 
 <footer>
   <div class="foot">
-    <div><strong>PakStudyfy</strong><br>Free notes, past papers and MCQs for Pakistani students.</div>
+    <div><strong>PakStudyfy</strong><br>Free notes, guess papers, past papers and MCQs for Pakistani students.<br>WhatsApp: +92 319 8778793</div>
     <nav>
       <a href="#about">About Us</a>
       <a href="#contact">Contact Us</a>
@@ -92,8 +99,9 @@ footer{background:#111827;color:#d1d5db;padding:24px 16px;margin-top:30px}
 
 <script>
 /* ==================== SETTINGS ==================== */
-const SITE_URL = "https://www.pakstudyfy.com"; // change to your real domain
+const SITE_URL = "https://www.pakstudyfy.com";   // change to your real domain
 const WHATSAPP = "923198778793";
+const PHOTO    = "jaffar.jpg";                     // save your photo with this name in the same folder
 
 const CLASSES = [
   {id:"9th",   label:"9th"},
@@ -113,41 +121,134 @@ const SUBJECTS = {
   "ppsc":  ["General Knowledge","Current Affairs","English","Pak Studies","Math","Islamiyat"]
 };
 
-const SECTIONS = [
-  {id:"notes",    label:"Notes",                   desc:"Chapter-wise"},
-  {id:"past",     label:"Past Papers",             desc:"Last 5 years"},
-  {id:"guess",    label:"Guess Papers",            desc:"Important questions"},
-  {id:"test",     label:"Test Papers",             desc:"Daily tests"},
-  {id:"mcq",      label:"Solved MCQs",             desc:"With answers"},
-  {id:"syllabus", label:"Pairing Scheme / Syllabus", desc:"Latest scheme"}
+// Sections inside each subject (9th to 12th, PPSC)
+const SECTIONS_STD = [
+  {id:"notes",  label:"Chapter-wise Notes",              desc:"Chapter by chapter"},
+  {id:"guess",  label:"Chapter-wise Guess",              desc:"Important questions by chapter"},
+  {id:"g90",    label:"PakStudyfy Guess (90% Marks)",    desc:"For top marks"},
+  {id:"gpass",  label:"PakStudyfy Guess (Passing Marks)",desc:"For passing marks"},
+  {id:"mcq100", label:"100 Most Important MCQs",         desc:"Quick revision"}
 ];
 
+// Sections inside each MDCAT subject
+const SECTIONS_MDCAT = [
+  {id:"notes", label:"Chapter-wise Notes",  desc:"Chapter by chapter"},
+  {id:"mimp",  label:"Most Important MCQs", desc:"High-yield questions"},
+  {id:"cmcq",  label:"Conceptual MCQs",     desc:"Concept-based practice"},
+  {id:"ctest", label:"Chapter-wise Test",   desc:"Test yourself"}
+];
+
+// Class-level resources (shown under "General")
+const GENERAL_SECTIONS = [
+  {id:"past",     label:"Past Papers",             desc:"Last 5 years"},
+  {id:"syllabus", label:"Pairing Scheme / Syllabus",desc:"Latest scheme"}
+];
+
+function sectionsFor(cls, subj){
+  if (subj === "General") return GENERAL_SECTIONS;
+  return cls === "mdcat" ? SECTIONS_MDCAT : SECTIONS_STD;
+}
+
 /* ==================== YOUR PDFs ====================
-   Add one line per PDF. Replace url with your Google Drive / hosted PDF link.
+   Add one line per file. Use url:"#" until the link is ready (shows "Coming soon").
    cls: 9th | 10th | 11th | 12th | mdcat | ppsc
-   section: notes | past | guess | test | mcq | syllabus
+   subject: exact name from SUBJECTS, or "General" for past papers / syllabus
+   section: notes | guess | g90 | gpass | mcq100 | mimp | cmcq | ctest | past | syllabus
    date: YYYY-MM-DD (controls "Latest Uploads" order)
 */
 const DOCS = [
-  {title:"Chapter 1 - Motion Notes",         cls:"9th",   subject:"Physics",   section:"notes",    url:"#", date:"2026-10-28"},
-  {title:"Chapter 2 - Cell Structure Notes", cls:"9th",   subject:"Biology",   section:"notes",    url:"#", date:"2026-10-27"},
-  {title:"Math Guess Paper 2026",            cls:"10th",  subject:"Math",      section:"guess",    url:"#", date:"2026-10-26"},
-  {title:"Biology Past Papers 2025",         cls:"mdcat", subject:"Biology",   section:"past",     url:"#", date:"2026-10-25"},
-  {title:"Chemistry Solved MCQs - Chapter 1",cls:"11th",  subject:"Chemistry", section:"mcq",      url:"#", date:"2026-10-24"},
-  {title:"Pak Studies Syllabus 2026",        cls:"ppsc",  subject:"Pak Studies",section:"syllabus",url:"#", date:"2026-10-23"}
+  {title:"Physics Chapter 1 - Motion Notes",      cls:"9th",   subject:"Physics",   section:"notes",  url:"#", date:"2026-10-28"},
+  {title:"Biology Chapter 2 - Cell Structure Notes",cls:"9th", subject:"Biology",   section:"notes",  url:"#", date:"2026-10-27"},
+  {title:"Math Chapter-wise Guess Paper",         cls:"10th",  subject:"Math",      section:"guess",  url:"#", date:"2026-10-26"},
+  {title:"Biology Most Important MCQs",           cls:"mdcat", subject:"Biology",   section:"mimp",   url:"#", date:"2026-10-25"},
+  {title:"Chemistry 100 Most Important MCQs",     cls:"11th",  subject:"Chemistry", section:"mcq100", url:"#", date:"2026-10-24"},
+  {title:"Pak Studies Syllabus 2026",             cls:"ppsc",  subject:"General",   section:"syllabus",url:"#",date:"2026-10-23"}
+];
+
+/* ==================== NOTICE BOARD ====================
+   Add new notices at the top of this list. Keep text factual and sourced.
+*/
+const NOTICES = [
+  {date:"2026-11-01", title:"Welcome to the PakStudyfy Notice Board", text:"Educational news, exam updates, paper dates and new uploads will be posted here."}
+];
+
+/* ==================== SKILLS & LEARN AND EARN ====================
+   Add more lines in the same format from your course list.
+   Only add courses you are allowed to share.
+*/
+const COURSES = [
+  {cat:"Earn Online", title:"Fiverr Pro Online Course 2024 - Become a Fiverr Pro", link:"https://drive.google.com/drive/folders/1RHSIvHYycEwOGsc5n15S3IH7ozG0aR8_"},
+  {cat:"Earn Online", title:"Ultimate Freelancing Course From Beginner to Expert", link:"https://drive.google.com/drive/folders/1uws9MtuuCIdMJLnv2GPtPXDUl_gjzhYY"},
+  {cat:"Earn Online", title:"Upwork Complete Course", link:"https://drive.google.com/drive/folders/1XUTsITdwDmtNwV2vnYxsZxQjuUkXq0Wm"},
+  {cat:"Earn Online", title:"Win Clients With Upwork (Upwork Mastery Course)", link:"https://drive.google.com/drive/folders/18Z99vjjB6XVz2SMeOLsMJC1Q9Ogdv9uq"},
+  {cat:"Earn Online", title:"The Freelance Freedom", link:"https://drive.google.com/drive/folders/1H5z-uF1WI969ODIEMs88P3vvkNgKosJM"},
+  {cat:"Earn Online", title:"Fiverr Full Course", link:"https://drive.google.com/drive/folders/1Id7cpDoyfkU1b_rQX8xKY3_Oi--ONAu1"},
+  {cat:"Earn Online", title:"Amazon Affiliate Marketing", link:"https://drive.google.com/drive/folders/1wu6THJywKb9yV_DWRQ1zVNHqaAzDjLub"},
+  {cat:"Earn Online", title:"Make Money Affiliate Marketing", link:"https://drive.google.com/drive/folders/1RkeS9Bo093tHNi5fbsKvKdj7iIkr-cD9"},
+  {cat:"Earn Online", title:"Digital Income Project - Content MBA", link:"https://drive.google.com/drive/folders/1bqtILtVVfpB-Uhd0vSb3PUPm_vCoNIDT"},
+  {cat:"Earn Online", title:"Earn Passive Income By Selling Digital Products", link:"https://drive.google.com/drive/folders/18YdzSHJHyQLJGycpoL7qjgzuK9OOeG5d"},
+
+  {cat:"Digital Marketing", title:"Facebook Ads Course", link:"https://drive.google.com/drive/folders/1kNTuqDFJDl5m1b97-GrRItGv0DAPYSjy"},
+  {cat:"Digital Marketing", title:"Google Ads Course", link:"https://drive.google.com/drive/folders/1kl9x04m8CwGYYccMDnojO2dCCvAi3yu7"},
+  {cat:"Digital Marketing", title:"Ai & Digital Marketing Live Training", link:"https://drive.google.com/drive/folders/15ftHO7NgHnDHGh5OeAtldZf0ktL49DGk"},
+  {cat:"Digital Marketing", title:"Email Marketing Course", link:"https://drive.google.com/drive/folders/14uOZdo9bHqSUYzaTrJYnWB1G36XWXtLf"},
+  {cat:"Digital Marketing", title:"Online Digital Marketing Course", link:"https://drive.google.com/drive/folders/1XcgkZrBzVuDHPZa3QGDdQfO1rugn5Dd9"},
+  {cat:"Digital Marketing", title:"Ecommerce Accelerator Course 2024", link:"https://drive.google.com/drive/folders/1vYIueeM4CU4J4h4I9J0Cx8b7A35PoyxX"},
+
+  {cat:"Office & Computer Skills", title:"Mastering Excel - Become a Power User", link:"https://drive.google.com/drive/folders/18jQ20PNoKYPHgjFy5HALApmUdlN12evO"},
+  {cat:"Office & Computer Skills", title:"Microsoft Excel - Excel Course For Beginners", link:"https://drive.google.com/drive/folders/1JxqHxo8VC5TVUGUuYyPfwZZzil3GEKLU"},
+  {cat:"Office & Computer Skills", title:"Excel for Everyone - Essential Skills for Work and Life", link:"https://drive.google.com/drive/folders/1n8UswFA_CjiaLdE8X_o4Ge6B_cOdNE5P"},
+  {cat:"Office & Computer Skills", title:"PowerPoint - Basic to Advanced", link:"https://drive.google.com/drive/folders/1I9RbFLOfbVXL1gV5b4U7gsQTUVAp-ZEP"},
+  {cat:"Office & Computer Skills", title:"The Complete Microsoft Word Course", link:"https://drive.google.com/drive/folders/1j_xQOoiR9h2AGnQLt9tOlIbRkESiRh63"},
+  {cat:"Office & Computer Skills", title:"Mastering Google Docs", link:"https://drive.google.com/drive/folders/1Ue_vvHm2KdJEYOMeWfccbtsk542l-mZ_"},
+
+  {cat:"Video Editing", title:"CapCut Mastery From Beginner to Pro", link:"https://drive.google.com/drive/folders/1q6puwfuGht5ZJPCVQiZ0ubqyPs1O1PgI"},
+  {cat:"Video Editing", title:"Video Editing Mastery - Become a Video Editing PRO (CapCut)", link:"https://drive.google.com/drive/folders/1o-xgqEi_HvVO5F3zMifr9psMc2tMQPST"},
+  {cat:"Video Editing", title:"Filmora 13 Full Course", link:"https://drive.google.com/drive/folders/1Q655cZ69JcZN64cfdLAdH2I3Hhl-b22U"},
+  {cat:"Video Editing", title:"Learn Filmora Video Editing Masterclass", link:"https://drive.google.com/drive/folders/1bl2FX2mlB2_0G_plj_zT036P1Gooj_Oe"},
+  {cat:"Video Editing", title:"Adobe Premiere Pro Essentials for Beginners", link:"https://drive.google.com/drive/folders/1ExsAvhv_QwQCoTcpZCI9qC2KID1i6YKB"},
+  {cat:"Video Editing", title:"Camtasia Mastery: Beginner to Pro", link:"https://drive.google.com/drive/folders/1fZ92-T8S-2BPG_prbLqIMmG9zs3vkd3r"},
+
+  {cat:"Graphic Design", title:"Canva for Social Media & Ads", link:"https://drive.google.com/drive/folders/1zeagnCAPNlNRx_qzlyByOX2-W4kT5eNY"},
+  {cat:"Graphic Design", title:"Essential Canva Course for Graphics Design (2 Hours)", link:"https://drive.google.com/drive/folders/1sWTF0PWjrDoSEdFsoBo1oSofEsgWd5Ow"},
+  {cat:"Graphic Design", title:"Learn Canva for Advance Graphics Design", link:"https://drive.google.com/drive/folders/1qJXNquwrKeouv91NEQO8GQGO5fPlunyK"},
+  {cat:"Graphic Design", title:"Adobe Illustrator Course For Beginner", link:"https://drive.google.com/drive/folders/1JEHn6w2Q8y_OjRQpVbVJyv0bTN6AspXi"},
+  {cat:"Graphic Design", title:"Essential Lightroom Course for Beginner to Advanced", link:"https://drive.google.com/drive/folders/1tMMtVCMKYifETQhWhUcnpeMViFnOyjQ1"},
+  {cat:"Graphic Design", title:"The Complete 2025 UI/UX Design Journey with Figma", link:"https://drive.google.com/drive/folders/1Un4XoWw_JJaReGtY4i1fbq1bXVgqcwne"},
+
+  {cat:"AI Skills", title:"ChatGPT Complete 2025 Course for Making Money Online", link:"https://drive.google.com/drive/folders/1pPsK7E9hvhfumcvybDhfbNEoSJs5nSax"},
+  {cat:"AI Skills", title:"The Best ChatGPT & AI Course - Make Money With AI", link:"https://drive.google.com/drive/folders/1E_L2Z1uRwo14wksrAknhpt1pYZNQsjU7"},
+  {cat:"AI Skills", title:"Master AI Prompting", link:"https://drive.google.com/drive/folders/1RlFrolRfacJcBt2uEn3Du-1ReP_z7_ce"},
+  {cat:"AI Skills", title:"Jumpstart Python & Gen AI - Zero to Hero for Beginners", link:"https://drive.google.com/drive/folders/1rrNr_wTPtey7Vr9jjyyPUz8enSocEA_H"},
+
+  {cat:"Programming", title:"Python Programming Complete Beginners Course 2024", link:"https://drive.google.com/drive/folders/1agyjPARLCyLmY07MrHtImegVLfZvW618"},
+  {cat:"Programming", title:"Python - The Complete Bootcamp", link:"https://drive.google.com/drive/folders/1ydoBD9BeXTekY5lZKdKhACMpYozTtyPX"},
+  {cat:"Programming", title:"Complete Web Development by Dr Angela Yu", link:"https://drive.google.com/drive/folders/1S4ltJD-ECWVItvUKx5y9eCTSKvopO1yG"},
+  {cat:"Programming", title:"The Complete Web Developer Bootcamp - Beginner to Expert", link:"https://drive.google.com/drive/folders/1HJWOCuGaB_P2BA0ptu1ea87LAO2VBiU0"},
+  {cat:"Programming", title:"Introduction to Computer Programming (Urdu)", link:"https://drive.google.com/drive/folders/1tSs7LHX_-PqgU3199N_5rC9eyCBTJADl"},
+
+  {cat:"English & Study Skills", title:"Aleena Raees Spoken English 2024", link:"https://drive.google.com/drive/folders/11DdsCPI1nkvH5teJIVzPFFNOd_5DU76j"},
+  {cat:"English & Study Skills", title:"Everyday English", link:"https://drive.google.com/drive/folders/1HbfIXTpeqt1vZbQqSyxcUobZGZnBkCBu"},
+  {cat:"English & Study Skills", title:"English Grammar Mastery Course", link:"https://drive.google.com/drive/folders/1kGHY_ErbDr-sAsrQKRxiKJuzNyeyIzeP"},
+  {cat:"English & Study Skills", title:"Mastering IELTS Writing Task 2", link:"https://drive.google.com/drive/folders/1HF0y-YZwJwPn38Kyefsk1H39rz1323V_"},
+  {cat:"English & Study Skills", title:"Justin Sung - iCan Study", link:"https://drive.google.com/drive/folders/18tcGhVCUIAESasXJZux3-eMt1-veY39u"},
+  {cat:"English & Study Skills", title:"Time Management: Advance Strategies to Reclaim Your Day", link:"https://drive.google.com/drive/folders/1tTIqagU7ywX2uFGKfkpcJg5Zyu6Ux95f"},
+  {cat:"English & Study Skills", title:"Communication Skills For Success - In Business & In Life", link:"https://drive.google.com/drive/folders/12sJvgLxh2vFcBqhw1B6FWcURd6W3Lkhp"}
 ];
 
 /* ==================== STATIC PAGES ==================== */
 const PAGES = {
   about: {
     title: "About Us",
-    body: `<p>PakStudyfy is a free study platform that helps Pakistani students find notes, past papers, guess papers, solved MCQs and syllabus for 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS and NTS.</p>
-           <p>PakStudyfy was founded by <strong>Muhammad Jaffar</strong>. Our goal is simple: make quality study material free and easy to find on any phone.</p>`
+    body: `<img class="founder" src="${PHOTO}" alt="Muhammad Jaffar, founder of PakStudyfy" onerror="this.style.display='none'">
+           <p>PakStudyfy is a free study platform that helps Pakistani students find chapter-wise notes, guess papers, past papers, MCQs and syllabus for 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS and NTS.</p>
+           <p>PakStudyfy was founded by <strong>Muhammad Jaffar</strong>. Our goal is simple: make quality study material free and easy to find on any phone.</p>
+           <p><a class="wa-big" href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener">Contact on WhatsApp</a></p>`
   },
   contact: {
     title: "Contact Us",
-    body: `<p>For questions, feedback or content requests, reach us on WhatsApp:</p>
-           <p><a href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener"><strong>+92 319 8778793</strong></a></p>`
+    body: `<p>For questions, feedback, content requests or copyright concerns, message us on WhatsApp:</p>
+           <p><a class="wa-big" href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener">WhatsApp: +92 319 8778793</a></p>`
   },
   privacy: {
     title: "Privacy Policy",
@@ -167,21 +268,29 @@ const PAGES = {
 /* ==================== HELPERS ==================== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const enc = s => encodeURIComponent(s);
 const classLabel = id => (CLASSES.find(c => c.id === id) || {}).label || id;
-const sectionLabel = id => (SECTIONS.find(s => s.id === id) || {}).label || id;
+const sectionLabel = (cls, subj, id) => (sectionsFor(cls, subj).find(s => s.id === id) || {}).label || id;
 const newestFirst = list => [...list].sort((a, b) => b.date.localeCompare(a.date));
+
+function crumb(parts) {
+  return `<div class="crumb">${parts.map(p => p.href ? `<a href="${p.href}">${esc(p.label)}</a>` : esc(p.label)).join(" / ")}</div>`;
+}
 
 function docCard(d) {
   const shareText = `${d.title} - Free download on PakStudyfy: ${SITE_URL}`;
-  const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  const waLink = `https://wa.me/?text=${enc(shareText)}`;
+  const dl = d.url === "#"
+    ? `<span class="btn btn-soon">Coming soon</span>`
+    : `<a class="btn btn-download" href="${esc(d.url)}" target="_blank" rel="noopener">&#11015; Download</a>`;
   return `
     <div class="card doc">
       <div class="doc-info">
         <div class="doc-title">${esc(d.title)}</div>
-        <div class="doc-meta">${esc(classLabel(d.cls))} &bull; ${esc(d.subject)} &bull; ${esc(sectionLabel(d.section))} &bull; ${esc(d.date)}</div>
+        <div class="doc-meta">${esc(classLabel(d.cls))} &bull; ${esc(d.subject)} &bull; ${esc(sectionLabel(d.cls, d.subject, d.section))} &bull; ${esc(d.date)}</div>
       </div>
       <div class="actions">
-        <a class="btn btn-download" href="${esc(d.url)}" target="_blank" rel="noopener">&#11015; Download</a>
+        ${dl}
         <a class="btn btn-wa" href="${waLink}" target="_blank" rel="noopener">WhatsApp Share</a>
       </div>
     </div>`;
@@ -194,14 +303,14 @@ function docList(items, emptyText = "No files uploaded yet. Check back soon!") {
 function onSearch(e) {
   e.preventDefault();
   const q = e.target.q.value.trim();
-  if (q) location.hash = "search/" + encodeURIComponent(q);
+  if (q) location.hash = "search/" + enc(q);
 }
 
 /* ==================== VIEWS ==================== */
 function viewHome() {
   return `
     <section class="hero">
-      <h1>Free Notes, Past Papers &amp; MCQs</h1>
+      <h1>Free Notes, Guess Papers &amp; MCQs</h1>
       <p>For 9th, 10th, 11th, 12th, MDCAT, PPSC, FPS &amp; NTS</p>
       <form class="search" onsubmit="onSearch(event)">
         <input name="q" placeholder="Search 9th, 10th, MDCAT Notes..." aria-label="Search">
@@ -209,55 +318,112 @@ function viewHome() {
       </form>
     </section>
 
-    <div class="classes">
-      ${CLASSES.map(c => `<a class="class-btn" href="#class/${c.id}">${esc(c.label)}</a>`).join("")}
+    <div class="grid">
+      ${CLASSES.map(c => `<a class="tile" href="#class/${c.id}">${esc(c.label)}</a>`).join("")}
+    </div>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <a class="tile tile-solid" href="#notices">Notice Board<small>Educational news &amp; updates</small></a>
+      <a class="tile tile-solid" href="#skills">Skills &amp; Learn and Earn<small>Courses to learn &amp; earn online</small></a>
     </div>
 
     <h2>Latest Uploads</h2>
     ${docList(newestFirst(DOCS).slice(0, 10))}`;
 }
 
-function viewClass(id) {
-  if (!CLASSES.find(c => c.id === id)) return viewNotFound();
+function viewClass(cls) {
   return `
-    <div class="crumb"><a href="#home">Home</a> / ${esc(classLabel(id))}</div>
-    <h1>${esc(classLabel(id))}</h1>
+    ${crumb([{label:"Home", href:"#home"}, {label:classLabel(cls)}])}
+    <h1>${esc(classLabel(cls))}</h1>
 
-    <h2>Choose a Section</h2>
-    <div class="sections">
-      ${SECTIONS.map(s => `
-        <a class="section-card" href="#class/${id}/${s.id}">
-          ${esc(s.label)}
-          <small>${esc(s.desc)}</small>
-        </a>`).join("")}
+    <h2>Choose a Subject</h2>
+    <div class="grid">
+      ${SUBJECTS[cls].map(s => `<a class="tile" href="#class/${cls}/${enc(s)}">${esc(s)}</a>`).join("")}
     </div>
 
-    <h2>Subjects</h2>
-    <div class="tabs">
-      ${SUBJECTS[id].map(s => `<a class="tab" href="#search/${encodeURIComponent(s)}">${esc(s)}</a>`).join("")}
+    <h2>Class Resources</h2>
+    <div class="grid">
+      ${GENERAL_SECTIONS.map(s => `<a class="tile" href="#class/${cls}/General/${s.id}">${esc(s.label)}<small>${esc(s.desc)}</small></a>`).join("")}
     </div>`;
 }
 
-function viewSection(id, sec) {
-  const s = SECTIONS.find(x => x.id === sec);
-  if (!s || !CLASSES.find(c => c.id === id)) return viewClass(id);
-  const items = newestFirst(DOCS.filter(d => d.cls === id && d.section === sec));
+function viewSubject(cls, subj) {
   return `
-    <div class="crumb"><a href="#home">Home</a> / <a href="#class/${id}">${esc(classLabel(id))}</a> / ${esc(s.label)}</div>
-    <h1>${esc(classLabel(id))} - ${esc(s.label)}</h1>
+    ${crumb([{label:"Home", href:"#home"}, {label:classLabel(cls), href:`#class/${cls}`}, {label:subj}])}
+    <h1>${esc(classLabel(cls))} - ${esc(subj)}</h1>
+    <h2>Choose a Section</h2>
+    <div class="grid">
+      ${sectionsFor(cls, subj).map(s => `
+        <a class="tile tile-solid" href="#class/${cls}/${enc(subj)}/${s.id}">
+          ${esc(s.label)}
+          <small>${esc(s.desc)}</small>
+        </a>`).join("")}
+    </div>`;
+}
+
+function viewSection(cls, subj, sec) {
+  const s = sectionsFor(cls, subj).find(x => x.id === sec);
+  const items = newestFirst(DOCS.filter(d => d.cls === cls && d.subject === subj && d.section === sec));
+  const parent = subj === "General" ? {label:"Class Resources"} : {label:subj, href:`#class/${cls}/${enc(subj)}`};
+  return `
+    ${crumb([{label:"Home", href:"#home"}, {label:classLabel(cls), href:`#class/${cls}`}, parent, {label:s.label}])}
+    <h1>${esc(classLabel(cls))} - ${esc(subj === "General" ? "" : subj + " - ")}${esc(s.label)}</h1>
     <p style="color:var(--muted);margin:6px 0 16px">${esc(s.desc)}</p>
-    ${docList(items, `No ${esc(s.label)} uploaded yet for ${esc(classLabel(id))}. Check back soon!`)}`;
+    ${docList(items, `No ${esc(s.label)} uploaded yet for ${esc(classLabel(cls))}${subj === "General" ? "" : " " + esc(subj)}. Check back soon!`)}`;
 }
 
 function viewSearch(q) {
   const term = q.toLowerCase();
   const items = newestFirst(DOCS.filter(d =>
-    [d.title, d.subject, classLabel(d.cls), sectionLabel(d.section)].join(" ").toLowerCase().includes(term)
+    [d.title, d.subject, classLabel(d.cls), d.section].join(" ").toLowerCase().includes(term)
   ));
   return `
-    <div class="crumb"><a href="#home">Home</a> / Search</div>
+    ${crumb([{label:"Home", href:"#home"}, {label:"Search"}])}
     <h1>Results for "${esc(q)}"</h1>
     ${docList(items, "No results found. Try another keyword like Math or 10th.")}`;
+}
+
+function viewNotices() {
+  return `
+    ${crumb([{label:"Home", href:"#home"}, {label:"Notice Board"}])}
+    <h1>Notice Board</h1>
+    <p style="color:var(--muted);margin:6px 0 16px">Educational news and updates</p>
+    ${newestFirst(NOTICES).map(n => `
+      <div class="card notice">
+        <div class="doc-title">${esc(n.title)}</div>
+        <div class="doc-meta">${esc(n.date)}</div>
+        <p style="margin-top:8px">${esc(n.text)}</p>
+      </div>`).join("") || `<div class="empty">No notices yet.</div>`}`;
+}
+
+function viewSkills() {
+  const cats = [...new Set(COURSES.map(c => c.cat))];
+  return `
+    ${crumb([{label:"Home", href:"#home"}, {label:"Skills & Learn and Earn"}])}
+    <h1>Skills &amp; Learn and Earn</h1>
+    <p style="color:var(--muted);margin:6px 0 10px">Learn a skill, then start earning with it.</p>
+    <input class="search-box" id="skillQ" placeholder="Search courses (e.g. Fiverr, Python, Canva)..." oninput="renderSkillList()">
+    <div id="skillList"></div>`;
+}
+
+function renderSkillList() {
+  const q = ($("#skillQ") ? $("#skillQ").value : "").trim().toLowerCase();
+  const list = COURSES.filter(c => (c.title + " " + c.cat).toLowerCase().includes(q));
+  const cats = [...new Set(list.map(c => c.cat))];
+  $("#skillList").innerHTML = cats.length ? cats.map(cat => `
+      <h2>${esc(cat)}</h2>
+      ${list.filter(c => c.cat === cat).map(c => `
+        <div class="card doc">
+          <div class="doc-info">
+            <span class="course-cat">${esc(c.cat)}</span>
+            <div class="doc-title">${esc(c.title)}</div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-download" href="${esc(c.link)}" target="_blank" rel="noopener">Open Course</a>
+            <a class="btn btn-wa" href="https://wa.me/?text=${enc(c.title + " - Free course on PakStudyfy: " + SITE_URL)}" target="_blank" rel="noopener">WhatsApp Share</a>
+          </div>
+        </div>`).join("")}`).join("")
+    : `<div class="empty">No courses found. Try another keyword.</div>`;
 }
 
 function viewNotFound() {
@@ -266,16 +432,25 @@ function viewNotFound() {
 
 /* ==================== ROUTER ==================== */
 function render() {
-  const [page, a, b] = (location.hash.slice(1) || "home").split("/").map(p => decodeURIComponent(p));
+  const parts = (location.hash.slice(1) || "home").split("/").map(p => { try { return decodeURIComponent(p); } catch(e) { return p; } });
+  const [page, a, b, c] = parts;
   let html;
 
-  if (page === "home")        html = viewHome();
-  else if (page === "class")  html = b ? viewSection(a, b) : viewClass(a);
-  else if (page === "search") html = viewSearch(a || "");
-  else if (PAGES[page])       html = `<div class="page"><h1>${PAGES[page].title}</h1>${PAGES[page].body}</div>`;
-  else                        html = viewNotFound();
+  if (page === "home" || !page)   html = viewHome();
+  else if (page === "class") {
+    if (!CLASSES.find(x => x.id === a)) html = viewNotFound();
+    else if (!b) html = viewClass(a);
+    else if (!c) html = (b === "General" || SUBJECTS[a].includes(b)) ? viewSubject(a, b) : viewNotFound();
+    else html = viewSection(a, b, c);
+  }
+  else if (page === "search")     html = viewSearch(a || "");
+  else if (page === "notices")    html = viewNotices();
+  else if (page === "skills")     html = viewSkills();
+  else if (PAGES[page])           html = `<div class="page"><h1>${PAGES[page].title}</h1>${PAGES[page].body}</div>`;
+  else                            html = viewNotFound();
 
   $("#app").innerHTML = html;
+  if (page === "skills") renderSkillList();
   window.scrollTo(0, 0);
 }
 
